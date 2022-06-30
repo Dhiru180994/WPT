@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./FilterStyle.css"/>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <title>Filter</title>
+    <script>
+        $(document).ready(function(){
+            $("#txtsearch").on("keyup",function(){
+                let a=$(this).val();
+                $("table tr").filter(function(){
+                    $(this).toggle($(this).text().indexOf(a)>=0)
+                });
+            });
+        });
+        
+
+    </script>
+</head>
+<body>
+    <h1>Filter work</h1>
+    <p>
+        <p>Enter to Search :- <input type="text" placeholder="Enter Here" id="txtsearch" style="border:3px solid black; padding: 5px; "/></p>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+            </tr>
+            <tr>
+                <td>123</td>
+                <td>Dhirendra</td>
+                <td>JHS</td>
+            </tr>
+            <tr>
+                <td>124</td>
+                <td>Vikas</td>
+                <td>BPL</td>
+            </tr>
+            <tr>
+                <td>125</td>
+                <td>Ajay</td>
+                <td>NZM</td>
+            </tr>
+            <tr>
+                <td>126</td>
+                <td>Arun</td>
+                <td>SAS</td>
+            </tr>
+            <tr>
+                <td>127</td>
+                <td>Abhishek</td>
+                <td>GKP</td>
+            </tr>
+        </table>
+    </p>
+    
+</body>
+</html>
